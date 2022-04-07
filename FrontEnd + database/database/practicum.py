@@ -30,7 +30,6 @@ def alarmtime():
     result = alarm_collection.find({},{"_id":0})
     my_res = []
     for r in result:
-
         my_res.append(r["time"])
     my_res.sort()
     return{
@@ -42,7 +41,6 @@ def alarmtime():
     result = alarm_collection.find({},{"_id":0})
     my_res = False
     curtime = int(time.time()+ 7*3600) % 86400
-    print(floor(curtime / 60))
     for r in result:
         if( floor(r["time"] / 60) == floor(curtime / 60)):
             my_res = True
@@ -65,10 +63,16 @@ def newalarm(hour : int , minute : int):
     newentry = {
         "time" : time
     }
-    alarm_collection.insert_one(newentry)
-    return{
-        "result" : "success"
-    }
+    test = alarm_collection.find_one(newentry)
+    if test == None:
+        alarm_collection.insert_one(newentry)
+        return{
+            "result" : "success"
+        }
+    else:
+        return{
+            "result" : "duplicate entry"
+        }
 
 @app.delete("/deletealarm/{hour}/{minute}")
 def deletealarm(hour : int, minute : int):

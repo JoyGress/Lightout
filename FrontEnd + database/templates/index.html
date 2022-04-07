@@ -5,23 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="https://kit.fontawesome.com/a96ecdccd8.js" crossorigin="anonymous"></script>
     <title> Alarm </title>
 </head>
 <body>
-    <h1> Alarm Clock </h1>
+    <h1> Alarm Clock <i class="fa-solid fa-bell"></i> </h1>
 
-        <p1> Add alarm </p1>
-        <form action="addalarm" method = "POST">
-            <p>Hour: <input type = "text" name = "hour" value="" required/></p>
-            <p>Minutes: <input type = "text" name = "minute" value="" required/></p>
-            <p><input type = "submit" value = "submit" /></p>
-        </form>
-
-        <p1> Current Alarm <p1>
-            {% for i in alarm %}
-            <div>
-                {{ i }}
+        <div id="container">
+            <br>
+            <div id="add">
+                <h2> Add alarm <i class="fa-solid fa-circle-plus"></i> </h2>
+                <form action="addalarm" method = "POST">
+                    <p>Hour: <input type = "text" name = "hour" value="" required/></p>
+                    <p>Minute: <input type = "text" name = "minute" value="" required/></p>
+                    <p id="mid"><input type = "submit" value = "submit" id="buttonleft"/></p>
+                </form>
             </div>
-            {% endfor %}
+
+            <div id="del">
+                <h2> Delete alarm <i class="fa-solid fa-circle-minus"></i> </h2>
+                <form action="delalarm" method = "POST">
+                    <p>Hour: <input type = "text" name = "hour" value="" required/></p>
+                    <p>Minute: <input type = "text" name = "minute" value="" required/></p>
+                    <p id="mid"><input type = "submit" value = "submit" id="buttonright"/></p>
+                </form>
+            </div>
+        </div>
+
+        <div id="current">
+            <h2> Current Alarm <i class="fa-solid fa-stopwatch"></i> </h2>
+                {%for i in range(0,listlen)%}
+                <div>
+                    <p>{{ hour[i] }} : {{ minute[i] }}</p>
+                </div>
+                {% endfor %}
+        </div>
 </body>
 </html>
