@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="https://kit.fontawesome.com/a96ecdccd8.js" crossorigin="anonymous"></script>
+    <title> Alarm </title>
+</head>
+<body>
+    <h1> Alarm Clock <i class="fa-solid fa-bell"></i> </h1>
+
+        <div id="container">
+            <div id="add">
+                <h2 id="move"> Add alarm <i class="fa-solid fa-circle-plus"></i> </h2>
+                <form action="addalarm" method = "POST">
+                    <p>Hour: <input type = "text" name = "hour" value="" required placeholder="For example 8:30, input 8"/></p>
+                    <p>Minute: <input type = "text" name = "minute" value="" required placeholder="For example 8:30, input 30"/></p>
+                    <p id="mid"><input type = "submit" value = "submit" id="buttonleft"/></p>
+                </form>
+            </div>
+
+            <div id="del">
+                <h2 id="move"> Delete alarm <i class="fa-solid fa-circle-minus"></i> </h2>
+                <form action="delalarm" method = "POST">
+                    <p>Hour: <input type = "text" name = "hour" value="" required  placeholder="For example 8:30, input 8"/></p>
+                    <p>Minute: <input type = "text" name = "minute" value="" required  placeholder="For example 8:30, input 30"/></p>
+                    <p id="mid"><input type = "submit" value = "submit" id="buttonright"/></p>
+                </form>
+            </div>
+        </div>
+
+        <div id="current">
+            <h2> Current Alarm <i class="fa-solid fa-stopwatch"></i> </h2>
+                {%for i in range(0,listlen)%}
+                <div>
+                    <p>{{ hour[i] }} : {{ minute[i] }}</p>
+                </div>
+                {% endfor %}
+            <form action="delall" method = "POST">
+                <p><input type = "submit" value = "delete all" id="delall"/></p>
+            </form>
+        </div>
+        <br>
+        <br>
+        <div id="credit">
+            <p> Alarm clock with 3*3 Black out minigame</p>
+            <p> By JoGress</p>
+        </div>"
+</body>
+</html>

@@ -1,0 +1,95 @@
+body {
+    background: rgb(0,228,255);
+    background: linear-gradient(90deg, rgba(0,228,255,1) 0%, rgba(0,78,255,1) 100%);
+    margin: 0;
+    font-family: Verdana, sans-serif;
+}
+
+
+h1,h2 {
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-family: Verdana, sans-serif;
+    color: #FFFFFF;
+    text-align: center;
+    background-color: #226ab2;
+}
+
+#add {
+    background-color: #9FE2BF;
+    float: left;
+    margin-left: 10%;
+    width: 40%;
+    border-top-width: 0px;
+    border-bottom-width: 10px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-color:  #226ab2;
+    border-style: solid;
+}
+
+#del {
+    background-color: #FF8A8A;
+    float: right;
+    margin-right: 10%;
+    width: 40%;
+    border-top-width: 0px;
+    border-bottom-width: 10px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-color:  #226ab2;
+    border-style: solid;
+}
+
+#current {
+    background-color: #82EEFD;
+    width: 40%;
+    text-align: center;
+    margin-top: 250px;
+    margin-left: 30%;
+    border-top-width: 0px;
+    border-bottom-width: 10px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-color:  #226ab2;
+    border-style: solid;
+}
+
+p {
+    font-family: Verdana, sans-serif;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-weight: 800;
+}
+
+#buttonright {
+    background-color: #fac2c2;
+    font-size: 20px;
+    width: 200px;
+    height: 50px;
+}
+
+#buttonleft {
+    background-color: #c5e3d4;
+    font-size: 20px;
+    width: 200px;
+    height: 50px;
+}
+
+#delall {
+    background-color: #b8e9efd4;
+    font-size: 20px;
+    width: 200px;
+    height: 50px;
+}
+
+#mid {
+    margin-left: 35%;
+}
+
+#credit{
+    margin-left: 25%;
+    width: 50%;
+    background-color: rgba(255, 245, 245, 0.203);
+    text-align: center;
+    color: #ffffff;
+}
